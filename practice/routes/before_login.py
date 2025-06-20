@@ -10,4 +10,4 @@ before_login_bp = Blueprint('before_login', __name__)
 @before_login_bp.route('/before_login', methods=['GET', 'POST'])
 def before_login():
     
-    return render_template('')
+    return render_template('before_login.html')
