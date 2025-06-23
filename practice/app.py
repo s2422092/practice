@@ -1,9 +1,5 @@
 from flask import Flask
 from routes import (
-    login_bp,
-    registration_bp,
-    home_bp,
-    logout_bp,
     before_login_bp
 )
 
@@ -14,11 +10,7 @@ app.secret_key = 'your_secret_key_here'  # ← 好きなランダムな文字列
 
 
 # ルートの登録
-app.register_blueprint(login_bp)
-app.register_blueprint(registration_bp)
-app.register_blueprint(home_bp)
-app.register_blueprint(logout_bp)
 app.register_blueprint(before_login_bp)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)  # デバッグモードでポート5000で実行
