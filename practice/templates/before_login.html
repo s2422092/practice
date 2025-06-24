@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ようこそ</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/before_login.css') }}">
+</head>
+<body>
+    <div class="header">
+        <nav>
+            <a href="{{ url_for('login.login') }}">ログイン</a>
+            <a href="{{ url_for('registration.registration') }}">会員登録</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <h1>サービスへようこそ！</h1>
+        <p>画面右上のリンクからログインまたは会員登録をしてください。</p>
+    </div>
+
+</body>
+</html>

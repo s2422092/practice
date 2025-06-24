@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ホーム</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <ul>
+            {% for category, message in messages %}
+                <li class="{{ category }}">{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+
+    <h1 class="welcome-msg">ようこそ、{{ username }} さん！</h1>
+
+    <p>これはログインしたユーザーだけが見られるページです。</p>
+
+    <a href="{{ url_for('logout.logout') }}">ログアウト</a>
+</body>
+</html>

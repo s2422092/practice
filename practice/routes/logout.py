@@ -1,8 +1,17 @@
-from flask import session, redirect, url_for, Blueprint
-from flask import render_template
+from flask import session, redirect, url_for, Blueprint, flash
 
-logout_bp = Blueprint('auth', __name__)
+# Blueprint名は 'logout' の方が分かりやすいかもしれません
+logout_bp = Blueprint('logout', __name__)
 
 @logout_bp.route('/logout')
 def logout():
-    return render_template('')
+    # セッションからユーザー情報を削除
+    session.pop('user_id', None)
+    session.pop('username', None)
+    
+    # またはセッション全体をクリア
+    # session.clear()
+
+    flash('ログアウトしました', 'info')
+    # ログアウト後は、ログイン前のトップページにリダイレクト
+    return redirect(url_for('before_login.before_login'))
