@@ -1,0 +1,40 @@
+
+
+/* 画面上部200px分に色をつける */
+body::before { /*body::beforeとは、body要素の前にコンテンツを挿入するための疑似要素です。*//*擬似要素とは、実際のDOMには存在しないが、CSSでスタイルを適用できる要素のことです。*/
+    content: ""; /*contentプロパティは、疑似要素に挿入するコンテンツを指定します。*/
+    display: block; /*displayプロパティは、要素の表示方法を指定します。blockは、要素をブロックレベルで表示することを意味します。*/
+    position: absolute; /*positionプロパティは、要素の位置を指定します。absoluteは、要素を絶対位置で配置することを意味します。*/
+    top: 0; /*topプロパティは、要素の上端からの距離を指定します。*/
+    left: 0; /*leftプロパティは、要素の左端からの距離を指定します。*/
+    width: 100%; /*widthプロパティは、要素の幅を指定します。*/
+    height: 200px; /*heightプロパティは、要素の高さを指定します。*/
+    background-color: #e0f0ff; /*background-colorプロパティは、要素の背景色を指定します。*/
+    z-index: -1;
+}
+
+/* aタグを右上に配置 */
+.head { /*.headは、ヘッダー部分をスタイルするためのクラス名です。*/
+    position: absolute; /*positionプロパティは、要素の位置を指定します。absoluteは、要素を絶対位置で配置することを意味します。*/
+    top: 20px; 
+    right: 20px;
+    display: flex; /*displayプロパティは、要素の表示方法を指定します。flexは、フレックスボックスレイアウトを使用することを意味します。*/
+    gap: 20px; /*gapプロパティは、フレックスアイテム間のスペースを指定します。*/
+}
+
+.head a { /*aタグは、リンクを作成するためのHTML要素です。*/
+    text-decoration: none; /*text-decorationプロパティは、テキストの装飾を指定します。noneは、装飾をなしにすることを意味します。*/
+    color: #333; /*colorプロパティは、テキストの色を指定します。#333は、暗いグレーの色を表します。*/
+    font-weight: bold; /*font-weightプロパティは、フォントの太さを指定します。boldは、太字を意味します。*/
+    padding: 10px 15px; /*paddingプロパティは、要素の内側の余白を指定します。10pxは上下の余白、15pxは左右の余白を意味します。*/
+    background-color: #cceeff; 
+    border-radius: 5px; /*border-radiusプロパティは、要素の角を丸くするためのプロパティです。5pxは、角の丸みの半径を指定します。*/
+    transition: background-color 0.3s; /*transitionプロパティは、要素のスタイルの変化にアニメーションを適用するためのプロパティです。background-color 0.3sは、背景色の変化に0.3秒のアニメーションを適用することを意味します。*/
+}
+
+.head a:hover { /*:hoverは、要素にマウスカーソルが乗ったときのスタイルを指定します。*/
+    background-color: #aaddff;  /*背景色を少し明るくするためのスタイルです。*/
+}
+
+
+/*.head と .head a　の違いは、.headがヘッダー全体のスタイルを指定するのに対し、.head aはヘッダー内のリンクのスタイルを指定することです。*/
