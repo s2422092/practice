@@ -1,18 +1,16 @@
 from flask import Flask
-from routes import (
+from routes.before_login.before_login import before_login_bp
+from routes.after_login.after_login import after_login_bp
 
-    before_login_bp
-)
+app = Flask(__name__)
+app.secret_key = 'your_secret_key'
 
-app = Flask(__name__, template_folder='template', static_folder='staicts')
-
-# 🔒 セッションなどに必要なシークレットキーを設定
-app.secret_key = 'your_secret_key_here'  # ← 好きなランダムな文字列でOK
-
-
-# ルートの登録
-
+# Blueprintの登録
 app.register_blueprint(before_login_bp)
+app.register_blueprint(after_login_bp)
+
+app.static_folder = 'staicts'
+app.template_folder = 'template'
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5001)
+    app.run(debug=True)
