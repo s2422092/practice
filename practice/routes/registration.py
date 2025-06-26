@@ -9,4 +9,4 @@ registration_bp = Blueprint('registration', __name__)
 # 登録ページルート
 @registration_bp.route('/registration', methods=['GET', 'POST'])
 def registration():
-    return render_template('')
+    return render_template('registration.html')
